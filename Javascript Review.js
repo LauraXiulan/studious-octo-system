@@ -43,27 +43,20 @@ joinArrays(array1, array2)
 Wrap this into a function that takes in one object that contains keys and values and returns a different object that contains two keys.
 The first key should be named "keys" and will have the first array as a value.
 The second key should be named "values" and will have the second array as a value.*/
+
 var food = {
 	cookie: "monster",
 	pizza:  "junkie",
 	sushi: "master"
 }
 
-var firstArray = ["Cookie", "Pizza", "Sushi"]
-var secondArray = ["Monster", "Junkie", "Master"]
-
 function takeObject(object) {
-	function newObject (keys,values) {
-		this.keys = []
-		this.values = []
-	}
 	var newObject = {
-		keys: firstArray,
-		values: secondArray
-	}		
-	for(i = 0; i < firstArray.length; i++) {		
-		return newObject
-	} 
+		keys: [],
+		values: []
+	}
+	for(var i in object) {
+		newObject.keys.push(i)
+		newObject.values.push(object[i])
+	} return newObject
 }
-
-takeObject(food)
